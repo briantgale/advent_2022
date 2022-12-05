@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "advent"
+
+day = ARGV.first
+name = "Advent::Day#{day}"
+
+klass = Object.const_get(name)
+obj = klass.new
+klass::RUN.each do |method|
+  out = obj.send(method)
+  puts "#{method}: #{out}"
+end
