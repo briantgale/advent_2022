@@ -22,7 +22,8 @@ class Advent::Day1
     totals.max(number).reduce(&:+)
   end
 
-  # Grab the input file for today and split it into an array for use later
+  # Grab the input file for today and split it into an array
+  #
   # @return [Array] an array of string
   def input
     data = File.read("input_day_1.txt")
@@ -41,9 +42,10 @@ class Advent::Day1
       if d.empty?
         grouped << current_group
         current_group = []
-      else
-        current_group << d.to_i
+        next
       end
+
+      current_group << d.to_i
     end
 
     # Make sure the last group gets added
