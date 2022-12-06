@@ -3,6 +3,10 @@ class Advent::Day2 < Advent::Day2Base
 
   RUN = %i(score)
 
+  # Computes the score assuming the values in the input are both
+  # rock paper scissors
+  #
+  # @return [Integer] the score
   def score
     data = get_input("input_day_2.txt")
 
@@ -16,12 +20,13 @@ class Advent::Day2 < Advent::Day2Base
 
   private
 
-  # A - Rock
-  # B - Paper
-  # C - Scissors
-  # X - Rock
-  # Y - Paper
-  # Z - Scissors
+  # First scenario assumes that XYZ are rock paper sciscors. This
+  # computes the outcome (win, lose, draw) based on the opponents move
+  # and my move
+  # 
+  # @param them [String] their move
+  # @param me [String] my move
+  # @return [Symbol] outcome
   def outcome(them, me)
     their_move = MOVES[them.to_sym]
     my_move = MOVES[me.to_sym]

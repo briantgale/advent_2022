@@ -3,6 +3,11 @@ class Advent::Day2B < Advent::Day2Base
 
   RUN = %i(score)
 
+  # Computes the score with the updated guidelines - that the 
+  # second input value on each line is actually the outcome, not
+  # what I played.
+  #
+  # @return [Integer] the score
   def score
     data = get_input("input_day_2.txt")
 
@@ -16,6 +21,11 @@ class Advent::Day2B < Advent::Day2Base
 
   private
 
+  # Computes the move that would be needed for the given outcome
+  #
+  # @param them [String] the move played by the opponent
+  # @param out [String] the desired outcome
+  # @return [Symbol] the move to play
   def move_for_outcome(them, out)
     their_move = MOVES[them.to_sym]
     outcome = OUTCOMES[out.to_sym]
