@@ -1,4 +1,6 @@
 class Advent::Day1
+  include Advent::Helper
+
   RUN = %i(top top_3)
 
   # The number of calories packed but the elf that packed the most
@@ -22,14 +24,6 @@ class Advent::Day1
     totals.max(number).reduce(&:+)
   end
 
-  # Grab the input file for today and split it into an array
-  #
-  # @return [Array] an array of string
-  def input
-    data = File.read("input_day_1.txt")
-    data.split("\n")
-  end
-  
   # Group up the input values following advent's instructions - A blank line
   # denotes the end of a group
   #
@@ -38,7 +32,7 @@ class Advent::Day1
     grouped = []
     current_group = []
 
-    input.each do |d|
+    get_input("input_day_1.txt").each do |d|
       if d.empty?
         grouped << current_group
         current_group = []
