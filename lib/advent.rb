@@ -8,6 +8,7 @@ require_relative "advent/day_2_base"
 require_relative "advent/day_2"
 require_relative "advent/day_2_b"
 require_relative "advent/day_3"
+require_relative "advent/day_4"
 
 module Advent
   class Error < StandardError; end
