@@ -3,6 +3,7 @@
 require 'pry'
 require_relative "advent/version"
 require_relative "advent/helper"
+require_relative "advent/day_5_base"
 
 # Dynamicly load my day classes
 dir = File.join(Dir.pwd, "lib", "advent")
