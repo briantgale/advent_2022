@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "advent"
+
+day = ARGV.first
+
+Advent.new_day(day)
+
